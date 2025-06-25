@@ -23,7 +23,7 @@ class BusinessRegistrationControllerTest extends TestCase
 {
     $currentDatabase = \DB::connection()->getDatabaseName();
 
-    $this->assertEquals('devonexfort_user_bar_test', $currentDatabase, "Connected to wrong database: $currentDatabase");
+    $this->assertEquals('bar_test', $currentDatabase, "Connected to wrong database: $currentDatabase");
 }
 
 
