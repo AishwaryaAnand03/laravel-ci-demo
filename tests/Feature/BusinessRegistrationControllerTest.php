@@ -22,6 +22,7 @@ class BusinessRegistrationControllerTest extends TestCase
     public function test_database_connection_is_test_db()
 {
     $currentDatabase = \DB::connection()->getDatabaseName();
+
     $this->assertEquals('bar_test', $currentDatabase, "Connected to wrong database: $currentDatabase");
 }
 
