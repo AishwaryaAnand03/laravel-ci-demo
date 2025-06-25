@@ -82,7 +82,6 @@ class BusinessRegistrationControllerTest extends TestCase
         ];
 
         $response = $this->postJson('/api/business-register', $payload);
-
  
         $response->assertStatus(200)
             ->assertJsonStructure([
