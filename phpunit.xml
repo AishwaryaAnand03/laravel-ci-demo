@@ -21,7 +21,7 @@
   <env name="APP_ENV" value="testing"/>
 <env name="APP_DEBUG" value="true"/>
 <env name="DB_CONNECTION" value="mysql"/>
-<env name="DB_DATABASE" value="bar_test"/>
+<env name="DB_DATABASE" value="devonexfort_user_bar_test"/>
 
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_DRIVER" value="array"/>
