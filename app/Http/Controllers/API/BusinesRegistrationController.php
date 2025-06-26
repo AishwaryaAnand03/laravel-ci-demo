@@ -16,7 +16,7 @@ use App\Services\AWSCognitoService;
 use Aws\Exception\AwsException;
 use Illuminate\Support\Facades\Log;
 
-class BussinessRegistrationController extends BaseController
+class BusinesRegistrationController extends BaseController
 {
     protected $cognitoService;
 
@@ -282,7 +282,26 @@ $partnerProfile->save();
     }
 
 
+public function getUserById(Request $request)
+{
 
+   
+
+    $id = $request->user_id;
+    $user = User::find($id);
+
+    if (!$user) {
+        return response()->json([
+            'success' => false,
+            'message' => 'User not found',
+        ], 404);
+    }
+
+    return response()->json([
+        'success' => true,
+        'data' => $user,
+    ]);
+}
 
 
 

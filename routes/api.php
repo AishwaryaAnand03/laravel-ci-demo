@@ -2,13 +2,14 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\BussinessRegistrationController;
+use App\Http\Controllers\API\BusinesRegistrationController;
 use App\Http\Controllers\API\PartnerDashboardController;
 use App\Http\Controllers\API\PartnerProfileController;
 use App\Http\Controllers\API\JobController;
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\GooglePlacesController;
 use App\Http\Controllers\API\WebsiteContentController;
+// use Tests\Feature\BusinessRegistrationControllerTest;
 use App\Http\Controllers\API\AccountsController;
 use App\Http\Controllers\API\StripeSubscriptionController;
 use App\Http\Controllers\API\PartnerQuotesController;
@@ -37,6 +38,9 @@ use App\Http\Controllers\API\BookingsController;
 Route::get('/', function () {
     return response()->json(['message' => 'Welcome'], 200);
 });
+
+
+
 
 
 
@@ -76,7 +80,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
     Route::middleware('api')->group(function () {
-        Route::post('/business-register', [BussinessRegistrationController::class, 'register']);
+
+
+   Route::get('/get-user', [BusinesRegistrationController::class, 'getUserById']);
+        Route::post('/business-register', [BusinesRegistrationController::class, 'register']);
     Route::post('/login', [UserController::class, 'login']);
     Route::post('/confirm-user', [UserController::class, 'confirmUser']);
     Route::post('/resend-otp', [UserController::class, 'resendOTP']);
@@ -89,7 +96,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::post('/get-joblist', [PartnerJobmatchesController::class, 'getjoblist']);
     Route::post('/job-details/{id}', [PartnerJobmatchesController::class, 'jobDetails']);
     Route::post('/submit-quote', [PartnerJobmatchesController::class, 'submitQuote']);
-
+  
+   
 
 
 });
