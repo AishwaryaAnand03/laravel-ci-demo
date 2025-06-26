@@ -1,7 +1,6 @@
 <?php
 
 namespace Tests\Feature;
-
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Http\UploadedFile;
@@ -19,8 +18,10 @@ class BusinessRegistrationControllerTest extends TestCase
         $this->withoutMiddleware(); // skip auth/middleware for test
     }
 
-    public function test_database_connection_is_test_db()
-{
+    public function test_database_connection_is_test_db(){
+
+
+
     $currentDatabase = \DB::connection()->getDatabaseName();
 
     $this->assertEquals('bar_test', $currentDatabase, "Connected to wrong database: $currentDatabase");
@@ -53,7 +54,7 @@ class BusinessRegistrationControllerTest extends TestCase
 
         // Full valid payload
         $payload = [
-            'email' => 'testt@example.com',
+            'email' => 'testet@example.com',
             'password' => 'Secret123!!',
             'confirmPassword' => 'Secret123!!',
             'businessName' => 'Test Business',
